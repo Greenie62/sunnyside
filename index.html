@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  
+
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital@1&family=Inter&display=swap');
+    
+    
+    *{
+      margin:0;
+      padding:0;
+
+    }
+    
+    body{
+      background:lightgray;
+      text-shadow:1px 1px 1px white;
+
+    }
+    
+    
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    
+    .app{
+      height:100vh;
+      width:100vw;
+      position:relative;
+      font-family: 'Fraunces', serif;
+
+    }
+    
+    .hero{
+      height:65%;
+      width:100%;
+      position:relative;
+      /* top:0; */
+    }
+
+    .header-img{
+      height:100%;
+      width:100%;
+      position:absolute;
+      top:0;
+      z-index:-1;
+    }
+
+    .arrow-img{
+      height:75px;
+      position:relative;
+      top:55px;
+    }
+
+    /* .h1-header{
+      position:absolute;
+      left:35%;
+    } */
+
+    .h1-img-center{
+      text-align:center;
+    }
+
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding:1em;
+      color:white;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      justify-content: space-evenly;
+      width:45%;
+      position:absolute;
+      left:55%;
+      transition:1s ease;
+    }
+
+    .nav-item{
+      list-style:none;
+      /* position:absolute;
+      left:0; */
+    }
+
+    /* .nav-item:nth-child(2){
+      left:25%;
+    }
+
+    .nav-item:nth-child(3){
+      left:50%;
+    }
+
+    .nav-item:nth-child(4){
+      left:75%;
+    } */
+
+   .nav-item:hover{
+      background:white;
+      padding:.5em;
+      border-radius:100px;
+    }
+
+    .burger{
+      display:none;
+      cursor:pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .h1-header{
+      font-family: 'Inter', sans-serif;
+
+    }
+
+
+    .line{
+      height:3px;
+      width:35px;
+      background:#ffffff;
+      margin:3px 0px;
+      font-family: 'Fraunces', serif;
+
+    }
+
+
+    .burger:hover{
+      color:rgb(65, 63, 63);
+      opacity:.7;
+    }
+
+    .hide{
+      opacity:0;
+    }
+
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .grid-cel{
+      width:100%;
+      height:100%;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-evenly;
+    }
+
+    .gallery-img{
+      height:100%;
+      width:100%;
+    }
+
+    .relative{
+      position:relative;
+    }
+
+    .flex{
+      display:flex;
+    }
+
+    .evenly{
+      align-items:center;
+      justify-content: space-evenly;
+    }
+ 
+    .absolute-center{
+      position:absolute;
+    }
+
+  
+
+    .grid-content{
+      text-align:center;
+    }
+
+    .grid-content-card{
+      flex-direction:column;
+      align-items:center;
+      justify-content: space-evenly;
+      display:flex;
+    }
+
+
+    .client-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+    }
+    
+    .avatar-img{
+      border-radius:50%;
+      height:65px;
+    }
+
+
+    .testimonial{
+      height:400px;
+    }
+
+    .testimonial-cel{
+      height:300px;
+    }
+
+    .grid-content-card{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content: space-evenly;
+      padding:1em;
+      /* background:red; */
+      height:75%;
+      /* background:green; */
+      
+    }
+
+
+    .test-header{
+      text-align:center;
+      padding:1em;
+    }
+
+
+    .img-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .img-cel{
+      width:100%;
+      height:100%;
+    }
+
+    .links{
+      padding:1.5em;
+      background:lightgreen;
+    }
+
+    .footer-links{
+      width:55%;
+    }
+
+    .media-links{
+      width:65%;
+      margin-top:20px;
+    }
+
+
+
+    @media screen and (max-width:550px){
+      .burger{
+        display:block
+      }
+
+      .nav-links{
+        /* opacity:0; */
+        display:flex;
+        flex-direction:column;
+        left:65%;
+        top:15%;
+      }
+
+      .nav-item{
+        top:0;
+        left:0;
+        margin:3px 0px;
+        position:relative;
+      }
+
+      .content-grid{
+        display:grid;
+        grid-template-columns:repeat(1,1fr);
+      }
+
+      .client-grid{
+        display:grid;
+        grid-template-columns:repeat(1,1fr);
+        /* background:red; */
+      }
+
+      .img-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        /* height:250px; */
+      }
+
+  
+
+      .grid-content{
+        width:75%;
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        justify-content:space-evenly;
+      }
+
+
+      .grid-cel{
+        height:250px;
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:space-evenly;
+      }
+
+
+      .testimonial{
+      height:800px;
+    }
+
+    .testimonial-cel{
+      height:250px;
+    }
+    }
+
+    .learn-more-h2{
+      margin-top:15px;
+      cursor:pointer;
+      color:rgb(70, 66, 66);
+      letter-spacing:2px;
+    }
+
+
+
+  </style>
+ 
+</head>
+<body>
+  <div class="app">
+    <div class="hero">
+      
+      <div class="navbar">
+          <h2 class='nav-h2'>sunnyside </h2>
+        
+          <ul class="nav-links">
+              <li class="nav-item">About</li>
+              <li class="nav-item">Services</li>
+              <li class="nav-item">Projects</li>
+              <li class="nav-item">Contact</li>
+          </ul>
+          <div class="burger">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+          </div>
+      </div>
+         
+        <img class='header-img' src="./images/desktop/image-header.jpg" alt="header-img">
+        <div class="h1-img-center">
+        <h1 class='h1-header'>  We are creatives</h1>
+        <img class='arrow-img' src="./images/icon-arrow-down.svg" alt="header-img">
+
+        </div>
+
+    </div>
+    
+    
+    <div class="content-grid">
+<div class="grid-cel">
+  <div class="grid-content">
+      <h1>Transform your brand </h1>
+        <p>We are a full-service creative agency specializing in helping brands grow fast. 
+  Engage your clients through compelling visuals that do most of the marketing for you.
+        </p>
+        <h2 class='learn-more-h2'>Learn more </h2>
+  </div>
+</div>
+
+
+<div class="grid-cel">
+  <img class="gallery-img" src="./images/desktop/image-gallery-orange.jpg" alt="gallery-img">
+</div>
+
+<div class="grid-cel">
+  <img class="gallery-img" src="./images/desktop/image-gallery-milkbottles.jpg" alt="gallery-img">
+</div>
+
+<div class="grid-cel">
+  <div class="grid-content">
+      <h1>  Stand out to the right audience</h1>
+        <p>  
+      Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
+       </p>
+        <h2 class='learn-more-h2'>Learn more </h2>
+  </div>
+</div>
+
+<div class="grid-cel relative">
+  <div class="grid-content absolute-center">
+      <h1 class="absolute h1">Graphic design </h1>
+      <p class="absolute p">  
+          Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.
+      </p>
+  </div>
+<img class="gallery-img" src="./images/desktop/image-graphic-design.jpg" alt="gallery-img">
+</div>
+
+<div class="grid-cel relative">
+<div class="grid-content absolute-center">
+    <h1 class="absolute h1">  Photography </h1>
+    <p class="absolute p"> Increase your credibility by getting the most stunning, high-quality photos that improve your business image. </p>
+</div>   
+   <img class="gallery-img" src="./images/desktop/image-photography.jpg" alt="gallery-img">
+
+</div>
+
+
+
+</div>   <!-- content-grid-->
+  
+<div class="testimonial">
+  <div class="test-header">
+    <h1>  Client testimonials</h1>
+  </div>
+  <div class="client-grid">
+    
+    <div class="grid-cel testimonial-cel">
+      <div class="grid-content-card">
+        <img class="avatar-img" src="./images/image-emily.jpg" alt="avatar">
+       <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit. </p>
+       <h5 class="bold"> Emily R. </h5>
+        Marketing Director
+      </div>
+    </div>
+
+        
+    <div class="grid-cel testimonial-cel">
+      <div class="grid-content-card">
+        <img class="avatar-img" src="./images/image-thomas.jpg" alt="avatar">
+
+      <p>  Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience. </p>
+       <h5 class="bold"> Thomas S. </h5>
+        Chief Operating Officer
+      </div>
+    </div>
+
+        
+    <div class="grid-cel testimonial-cel">
+      <div class="grid-content-card">
+        <img class="avatar-img" src="./images/image-jennie.jpg" alt="avatar">
+
+        <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended! </p>
+        <h5 class="bold">Jennie F.</h5>
+        Business Owner
+      </div>
+    </div>
+  
+  
+  </div>  <!--clientgrid-->
+</div>  <!--testimonials-->
+
+<div class="img-grid">
+  <div class="img-cel">
+    <img class="gallery-img" src="./images/desktop/image-gallery-sugarcubes.jpg" alt="">
+  </div>
+  <div class="img-cel">
+    <img class="gallery-img" src="./images/desktop/image-gallery-cone.jpg" alt="">
+  </div>
+  <div class="img-cel">
+    <img class="gallery-img" src="./images/desktop/image-gallery-orange.jpg" alt="">
+  </div>
+  <div class="img-cel">
+    <img class="gallery-img" src="./images/desktop/image-gallery-milkbottles.jpg" alt="">
+  </div>
+</div>
+
+<div class="links">
+  <div class="footer-links flex evenly">
+    <div class="footer-link">About</div>
+    <div class="footer-link">Services</div>
+    <div class="footer-link">Projects</div>
+    <div class="footer-link">Contact</div>
+  </div>
+
+  <div class="media-links flex evenly">
+    <img src="./images/icon-facebook.svg" alt="img">
+    <img src="./images/icon-instagram.svg" alt="img">
+    <img src="./images/icon-pinterest.svg" alt="img">
+    <img src="./images/icon-twitter.svg" alt="img">
+  </div>
+  <!-- About
+  Services
+  Projects
+  Contact -->
+</div>
+
+
+
+</div>
+<!-- 
+  Transform your brand
+
+  We are a full-service creative agency specializing in helping brands grow fast. 
+  Engage your clients through compelling visuals that do most of the marketing for you.
+
+  Learn more -->
+<!-- 
+  Stand out to the right audience
+
+  Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
+
+  Learn more -->
+
+
+  <!-- Photography
+  Increase your credibility by getting the most stunning, high-quality photos that improve your business image. -->
+
+  <!-- Client testimonials
+
+  We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
+  Emily R.
+  Marketing Director
+
+  Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.
+  Thomas S.
+  Chief Operating Officer
+
+  Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
+  Jennie F.
+  Business Owner -->
+
+  <!-- About
+  Services
+  Projects
+  Contact -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+
+  <script>
+    var burgerBtn = document.querySelector(".burger");
+    var navLinks = document.querySelector(".nav-links");
+
+
+    burgerBtn.onclick=()=>{
+        navLinks.classList.toggle('hide')
+    }
+  </script>
+</body>
+</html>
